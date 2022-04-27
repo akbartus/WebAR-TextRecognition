@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Text recognition in web AR</title>
+    <script src='https://aframe.io/releases/1.0.4/aframe.min.js'></script>
+    <script src="js/aframe-ar.js"></script>
+    <script src="js/aframe-glmol.js"></script>
+    <script src="js/capture-video-frame.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="recognized">I see: </div>
+    </div>
+    <img id="recognize" src="files/icon.png" />
+    <a-scene arjs vr-mode-ui="enabled: false">
+        <a-marker type="pattern" preset="custom" url="files/pattern-normal.patt">
+            <a-entity id="molStructure" glmol></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+    <script src="js/main.js"></script>
+</body>
+</html>
