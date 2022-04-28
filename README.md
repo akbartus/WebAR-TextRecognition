@@ -2,7 +2,7 @@
 ![Screenshot](files/screenshot.gif)
 
 ### **Description / Rationale**
-This is small project, which shows the use of image captioning (machine learning task; model used: https://huggingface.co/nlpconnect/vit-gpt2-image-captioning) as used in Web VR. It was inspired by similar project created by [Misslivirose](https://github.com/misslivirose) titled [Scene Reader](https://github.com/misslivirose/scene-reader) which shows image captioning with Three.js and Microsoft Azure service.
+This is the project demonstrating the usage of text recognition (which includes both printed text and handwritten text) in creating dynamic AR markers, i.e. the markers which can be easily changed and manipulated without the need for coding. It is powered by computer vision + AI model hosted on HuggingFace, AR.js and AFrame. The project was created to show the possibilities of text recognition in improving AR experiences.
 
 ### **Instructions**
 To see image captioning at work, click on camera icon. On every click image of the scene with caption will be generated. 
