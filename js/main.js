@@ -60,7 +60,7 @@ function captureVideoFrame(video, format, width, height) {
 
 // Text/Handwriting OCR API
 function handwritingOCR(frame) {
-    fetch('https://hf.space/embed/Akbartus/OCR/+/api/predict/', {
+    fetch('https://hf.space/embed/tomofi/MaskTextSpotterV3-OCR/+/api/predict/', {
             method: "POST",
             body: JSON.stringify({
                 "data": ["data:" + frame]
