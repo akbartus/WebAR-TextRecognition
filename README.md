@@ -16,7 +16,8 @@ To see the text recognition at work, do the following:
 The project powered by computer vision + AI model hosted on HuggingFace. At its core it uses AFrame and Ar.js.
 
 ### **Credits**
-<p>3D model of the room was created by <b>Francesco Coldesina</b>, and taken from <a href="https://sketchfab.com/3d-models/big-room-0b5da073be88481091dbef7e55f1d180">Sketchfab.com</a></p>
+The text recognition icon used in this project was taken from VeryIcon.com website with no attribution required.
+Computer vision + AI model used in this project is: [MaskTextSpotterV3-OCR ](https://huggingface.co/spaces/tomofi/MaskTextSpotterV3-OCR). 
 
 ### **Demo**
-To see the application at work: [Demo application](https://image-captioning.glitch.me/)
+To see the application at work: [Demo application](https://webar-textrecognition.glitch.me/)
