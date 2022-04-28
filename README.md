@@ -14,7 +14,7 @@ To see the text recognition at work, do the following:
 3. Wait for the text recognition system to identify the written text and load the desired molecular structure.
 
 ### **Tools Used**
-The project powered by computer vision + AI model hosted on HuggingFace. At its core it uses AFrame and Ar.js.
+The project is powered by computer vision + AI model hosted on HuggingFace. At its core it uses AFrame and Ar.js.
 
 ### **Credits**
 The text recognition icon used in this project was taken from VeryIcon.com website with no attribution required.
