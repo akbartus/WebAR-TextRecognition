@@ -5,7 +5,13 @@
 This is the project demonstrating the usage of text recognition, which includes both printed text and handwritten text, in creating dynamic AR markers (i.e. the markers which can be easily changed and manipulated without the need for coding). The project uses [GLMOL component ](https://github.com/SBUtltmedia/aframe-glmol-component) and loads a 3d molecular structure based on [Protein Data Bank (PDB) ID](https://www.rcsb.org/). It is powered by computer vision + AI model hosted on HuggingFace, AR.js and AFrame. 
 
 ### **Instructions**
-To see image captioning at work, click on camera icon. On every click image of the scene with caption will be generated. 
+To see the text recognition at work, do the following:
+1. Use template marker and write DPB ID below Kanji marker.
+
+![Template marker](files/template.jpg)
+![Marker with handwriting](files/target_1.jpg)
+
+3. with a marker see image captioning at work, click on camera icon. On every click image of the scene with caption will be generated. 
 In order to see the magic happen, try to find answer to the riddle. 
 
 
