@@ -14,8 +14,6 @@ function resizeCanvas(origCanvas, width, height) {
 
 document.getElementById("recognize").addEventListener("click", function () {
     let aScene = document.querySelector("a-scene").components.screenshot.getCanvas("perspective");
-
-
     let frame = captureVideoFrame("video", "png");
     aScene = resizeCanvas(aScene, frame.width, frame.height);
     frame = frame.dataUri;
@@ -35,20 +33,20 @@ function captureVideoFrame(video, format, width, height) {
     if (!video || (format !== 'png' && format !== 'jpeg')) {
         return false;
     }
-    var canvas = document.createElement("CANVAS");
+    let canvas = document.createElement("CANVAS");
     canvas.width = width || video.videoWidth;
     canvas.height = height || video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
-    var dataUri = canvas.toDataURL('image/' + format);
-    var data = dataUri.split(',')[1];
-    var mimeType = dataUri.split(';')[0].slice(5)
-    var bytes = window.atob(data);
-    var buf = new ArrayBuffer(bytes.length);
-    var arr = new Uint8Array(buf);
-    for (var i = 0; i < bytes.length; i++) {
+    let dataUri = canvas.toDataURL('image/' + format);
+    let data = dataUri.split(',')[1];
+    let mimeType = dataUri.split(';')[0].slice(5)
+    let bytes = window.atob(data);
+    let buf = new ArrayBuffer(bytes.length);
+    let arr = new Uint8Array(buf);
+    for (let i = 0; i < bytes.length; i++) {
         arr[i] = bytes.charCodeAt(i);
     }
-    var blob = new Blob([arr], {
+    let blob = new Blob([arr], {
         type: mimeType
     });
     return {
@@ -60,7 +58,7 @@ function captureVideoFrame(video, format, width, height) {
     };
 };
 
-// Text/Handwriting OCR
+// Text/Handwriting OCR API
 function handwritingOCR(frame) {
     fetch('https://hf.space/embed/Akbartus/OCR/+/api/predict/', {
             method: "POST",
@@ -75,7 +73,7 @@ function handwritingOCR(frame) {
                 return response.json();
             })
         .then(function (json_response) {
-            var arrayLength = json_response.data[1].data;
+            let arrayLength = json_response.data[1].data;
             if (arrayLength == 0) {
                 recognized.innerHTML = "Please scan one more time...";
                 setTimeout(() => {
@@ -83,9 +81,10 @@ function handwritingOCR(frame) {
                     recognized.setAttribute("style", "visibility: hidden");
                 }, 2000);
             } else {
-                var result = json_response.data[1].data[0][0];
+                let result = json_response.data[1].data[0][0];
                 recognized.innerHTML = "I see: " + result;
                 // Change molecular structure based on pbd ID
+               document.getElementById("molStructure").setAttribute("glmol", "");
                 document.getElementById("molStructure").setAttribute("glmol", "molId:pdb:" + result);
                 setTimeout(() => {
                     container.setAttribute("style", "visibility: hidden");
